@@ -1,0 +1,44 @@
+이건 그냥 텍스트파일입니다<br>
+확장자만 html이에요.<br>
+
+<!-- <script src="./test.js"></script> -->
+<script src="./person.js"></script>
+
+<input type="text" name="cnt" id="cnt">
+<input type="button" id="cntBnt" value="생성" onclick="makeTable()">
+<div id="result_div"></div>
+
+ 
+
+<script>
+    /* test.js */
+    // var t = new test(); //new는 메모리생성- 변수에 삽입하려면 반드시 new를 써줘야함
+    // t.alertStr("a");
+    // alert(t.test);
+    
+    /* person.js */
+    var p = new Person("박경훈",40,"남자","서울");
+    p.writePersonInfo();
+    p.setName("테스트");
+    p.writePersonInfo();
+    p.play = function(){
+        alert("놀고 있네요");
+    }
+    p.play();
+
+    function makeTable(){
+        var cntObj = document.getElementById("cnt");
+        var count = new Number(cntObj.value);
+        var str = "<table border='1'>";
+        var rDivObj = document.getElementById("result_div")
+        for(var i=1;i<=count;i++){
+            str += "<tr>";
+            for(var j=1;j<=count;j++){
+                str += "<td>" + i + "</td>";
+            }
+            str += "</tr>";
+        }
+        str += "</table>";
+        rDivObj.innerHTML = str;
+    }
+</script>
