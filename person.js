@@ -6,7 +6,7 @@ var Person = function(p_name,p_age,p_gender,p_address){
 
     this.writePersonInfo = function(){
         var str = "<br />이름 : " + name;
-        str += "<br />나이 : " + age;
+        str += "<br />나이 : " + age; 
         str += "<br />성별 : " + gender;
         str += "<br />주소 : " + address;
         document.write(str);
